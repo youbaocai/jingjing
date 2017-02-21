@@ -1,24 +1,96 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-<title>时钟</title>
-<meta charset = "utf-8">
-<style type="text/css">
-h1{
-	font-size: 20px;
-	color: red;
-	font-family: "微软雅黑";
-	text-align: center;
-}
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background-color: #000;
+				/*position: absolute;*/
+				margin-left: 25%;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="650"></canvas>
+	</body>
+	<script  type="text/javascript" charset="utf-8">
+		var canvas =document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
 		
-</style>
-</head>
-<body>
-		<h1> 你好，帅哥儿</h1>
-<script type="text/javascript">
+		/*ctx.beginPath();
+		ctx.fillStyle = "#f66"
+		ctx.fillRect(100,100,100,100);
+		
+		ctx.beginPath();
+		ctx.strokeStyle = "#f66"
+		ctx.strokeRect(200,200,100,100);*/
+		
+		//ctx.clearRect(150,150,200,200);
 		
 		
-</script>
-</div>
-</body>
+		
+		/*for(var i=1; i<=10; i++){
+			ctx.beginPath();
+			ctx.strokeStyle = "#f66";
+			ctx.arc(90*i,50,40,0,(Math.PI*i)/5,false);
+			ctx.stroke();
+		}//不同角度的弧形，无填充
+		for(var i=10; i>0; i--){
+			ctx.beginPath();
+			ctx.strokeStyle = "#f66";
+			ctx.fillStyle = "6f6"
+			ctx.arc(90*i,200,40,0,(Math.PI*2)/i,false);
+			ctx.stroke();
+			ctx.fill();
+		}*///不同角度的弧形，有填充
+		
+		
+		
+		//五角星
+		//ctx.rotate(Math.PI*(0.25));
+		for(var k=1;k<240;k++){
+			ctx.beginPath();
+			var m = Math.random()*600;
+			var n = Math.random()*600;
+			
+			//ctx.moveTo(m,n);
+			ctx.strokeStyle = "#f0d400";
+			ctx.lineWidth = 2;
+			ctx.fillStyle = "yellow"
+			ctx.rotate(Math.PI*(0.25)); 
+			for(var i=1; i<6;i++){
+				ctx.lineTo(Math.cos((18 + i * 72 ) / 180 * Math.PI) * 10 + m, -Math.sin((18 + i * 72 ) / 180 * Math.PI) * 10 + n); 
+		    	ctx.lineTo(Math.cos((54 + i * 72 ) / 180 * Math.PI) * 5 + m, -Math.sin((54 + i * 72 ) / 180 * Math.PI) * 5 + n);
+			}
+			ctx.lineTo(Math.cos((18 +  72 ) / 180 * Math.PI) * 10 + m, -Math.sin((18 +  72 ) / 180 * Math.PI) * 10 + n);
+			//ctx.lineTo(m,n);
+			ctx.stroke();
+			ctx.fill();
+		
+		}
+		///////////////
+		
+		for(var k=1;k<240;k++){
+			ctx.beginPath();
+			var m = Math.random()*600;
+			var n = Math.random()*600;
+			
+			//ctx.moveTo(m,n);
+			ctx.strokeStyle = "#f0d400";
+			ctx.lineWidth = 3;
+			ctx.fillStyle = "yellow";
+			ctx.rotate(Math.PI*(0.25)); 
+			for(var i=1; i<6;i++){
+				ctx.lineTo(Math.cos((18 + i * 72 ) / 180 * Math.PI) * 20 + m, -Math.sin((18 + i * 72 ) / 180 * Math.PI) * 20 + n); 
+		    	ctx.lineTo(Math.cos((54 + i * 72 ) / 180 * Math.PI) * 10 + m, -Math.sin((54 + i * 72 ) / 180 * Math.PI) * 10 + n);
+			}
+			ctx.lineTo(Math.cos((18 +  72 ) / 180 * Math.PI) * 20 + m, -Math.sin((18 +  72 ) / 180 * Math.PI) * 20 + n);
+			ctx.stroke();
+			ctx.fill();
+		
+		}
+		
+	</script>
 </html>
