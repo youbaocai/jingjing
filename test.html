@@ -18,11 +18,9 @@
 			margin: 0 auto;
 			font-size: 15px;
 		}
-		#higthScore{
-			float: left;
-		}
+		
 		#currentScore{
-			float: right;
+			float: left;
 		}
 		table{
 			margin: 0 auto;
@@ -155,9 +153,9 @@
 				gridState[headX][headY]=false;
 				score+=2;
 				document.getElementById('currentScore').innerText='得分：'+score;
-				if(score>document.getElementById('hightScore').innerText.substr(4)) {
+				/*if(score>document.getElementById('hightScore').innerText.substr(4)) {
 					document.getElementById('hightScore').innerText='最高分：'+score;
-				}
+				}*/
 				addfood();
 			} else {
 				var lastX=snake[snake.length-1][0];
@@ -239,7 +237,7 @@
 <body>
 	<div id="head">贪食蛇</div>
 	<div id="score">
-		<span id="hightScore">最高分：</span>
+		<!--<span id="hightScore">最高分：</span>-->
 		<span id="currentScore">得分：</span>
 	</div>
 	<div id="gameover">GAME OVER!</div>
